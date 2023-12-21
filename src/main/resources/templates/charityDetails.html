@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<p>Charity Name: <span th:text="${charity.charityName}"></span></p>
+<p>Category: <span th:text="${charity.category}"></span></p>
+<p>City: <span th:text="${charity.city}"></span></p>
+<p>Description: <span th:text="${charity.fullDescription}"></span></p>
+
+<button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#makeDone">
+    Handle
+</button>
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">
+    Delete task
+</button>
+
+
+<form th:action="${'/delete-charity/'+charity.id}" method="post">
+    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Are you sure?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+                    <button type="submit" class="btn btn-primary">YES</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form th:action="${'/handle-charity/'+charity.id}" method="post">
+    <div class="modal fade" id="makeDone" tabindex="-1" aria-labelledby="makeDone" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Are you done?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+                    <button type="submit" class="btn btn-primary">YES</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

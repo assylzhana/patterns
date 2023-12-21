@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+</head>
+<body>
+
+<div>
+    <h1>Welcome, <span th:text="${user.surname + ' ' +user.name}"></span>!</h1>
+    <p>Email: <span th:text="${user.email}"></span></p>
+    <p>Role: <span th:text="${user.role}"></span></p>
+    <a th:href="@{/logout}">Logout</a><br>
+    <a type="button" th:if="${user.role == 'ROLE_USER'}" th:href="@{/apply-to-charity}" >Apply to Charity</a><br>
+    <a  th:href="@{/all-charities}" >See all Charities</a>
+</div>
+
+
+<div th:if="${user.role == 'ROLE_USER'}">
+    <h2>Applied Charities</h2>
+    <ul>
+        <li th:each="charity : ${appliedCharities}">
+            <p>Charity Name: <span th:text="${charity.charityName}"></span></p>
+            <p>Category: <span th:text="${charity.category}"></span></p>
+            <p>City: <span th:text="${charity.city}"></span></p>
+            <p>Status: <span th:if="${charity.isHandled()}">applied</span><span th:if="${!charity.isHandled()}">wait</span></p>
+            <hr/>
+        </li>
+    </ul>
+</div>
+
+<div th:if="${user.role == 'ROLE_ADMIN'}">
+    <h2>Handle Charities</h2>
+    <ul th:each="charity : ${charities}">
+        <li th:if="${!charity.isHandled}">
+            <a th:href="@{'/details/' + ${charity.id}}"><p>Charity Name: <span th:text="${charity.charityName}"></span></p></a>
+            <p>Category: <span th:text="${charity.category}"></span></p>
+            <hr/>
+        </li>
+    </ul>
+</div>
+
+
+
+</body>
+</html>

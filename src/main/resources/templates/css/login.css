@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  width: 1440px;
+  margin: 0 auto; /* This centers the page horizontally */
+  height: 5941px;
+  background-color: #FFF8ED;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+    width: 1320px;
+    margin: 0 auto;
+    font-family: 'Inter';
+    padding: 193px 304px 151px 744px ;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFF8ED;
+    background-size: cover;
+}
+
+.login {
+    font-size: 16px;
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+label {
+    display: block;
+  }
+
+.login input[type="submit"]{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid rgba(71, 64, 128, 0.2);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    transition: .5s;
+    cursor: pointer;
+    display: block;
+    width: 392px;
+    height: 48px;
+    border-radius: 15px;
+}
+
+
+.login input[type="submit"]:hover {
+    cursor: pointer;
+    background-color:#6D64AE;
+    color:#fff;
+}
+
+form {
+    width: 392px;
+    height: 48px;
+    border-radius: 8px;
+    
+  }
+ h1 {
+    text-align: center;
+ }
+
+.login input {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.login input[type="text"],
+input[type="password"] {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 5px;
+    padding: 10px 10px; 
+    border: none;
+    outline: none;
+    background: transparent;
+    border: 1px solid rgba(71, 64, 128, 0.2);
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+
+a[href="password reset.html"] {
+    text-align: center;
+    text-decoration: none; /* Убираем подчеркивание */
+    display: block; /* Делаем ссылку блочным элементом */
+    margin-top: 20px; 
+    color:#6D64AE;/* Примерный отступ сверху, можно изменить на нужное значение */
+  }
+
+  #register-img {
+    
+    position: absolute;
+    width: 416px;
+    height: 564px;
+    left: 166px;
+    top: 50px;
+  }
+
+  .register {
+    position: absolute;
+    width: 431px;
+    height: 530px;
+    left: 166px;
+    top: 173px;
+  }
+
+  .pass-icon {
+    width: 24px;
+    height: 16px;
+    position: absolute;
+    left: 76.18%;
+    right: 22.29%;
+    top: 43%;
+    bottom: 36.78%;
+    cursor: pointer;
+  }
+
+ 
